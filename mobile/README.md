@@ -1,16 +1,35 @@
-# mobile
+# WIPRIM Real Estate Mobile Client
 
-A new Flutter project.
+WIPRIM's Real Estate Mobile Client is designed to allow users to browse and interact with property listings.
 
-## Getting Started
+## Features
+- Browse property listings
+- View detailed property information
+- In-app messaging and notifications
+- User authentication and profiles
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+- Node.js v14.x or higher
+- React Native CLI or Flutter (based on your choice)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Steps
+1. Clone the repository `git clone https://github.com/username/WIPRIM-RealEstate-App.git`
+2. Navigate to the mobile client directory `cd WIPRIM-RealEstate-App/mobile-client`
+3. Install dependencies `npm install` or `flutter pub get`
+4. Start the development server `npm start` or `flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage
+
+1. **Browsing Properties**: Users can browse properties from the home screen.
+2. **Viewing Property Details**: Clicking on a property will open a detailed view with images, description, and contact information.
+3. **User Authentication**: Users can register and log in to save preferences, send inquiries, etc.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Support
+
+For support, please contact us at [support@wipriminvestments.com](mailto:support@wipriminvestments.com).
