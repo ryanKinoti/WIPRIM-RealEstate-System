@@ -51,7 +51,7 @@ Our project owes much to the following open-source resources that greatly facili
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](../LICENSE.md) file for details.
 
 ## Support
 
