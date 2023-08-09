@@ -20,6 +20,8 @@ return new class extends Migration {
             $table->string('property_location');
             $table->point('location');
             $table->integer('number_of_floors');
+            $table->string('MPESA_pay_bill')->default('Paybill Number: 4024157, Account Number: House Number');
+            $table->string('Bank Deposit')->default('To Be Provided on Request');
             $table->timestamps();
         });
         DB::statement("ALTER SEQUENCE properties_id_seq RESTART WITH 101;");

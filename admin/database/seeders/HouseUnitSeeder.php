@@ -42,7 +42,7 @@ class HouseUnitSeeder extends Seeder
             '2nd_Flr' => [
                 'houses' => ['P-10', 'P-11', 'P-12', 'P-13', 'P-14', 'P-15'],
                 'rent_prices' => [
-                    [['P-10', 'P-11','P-12'], 21000],
+                    [['P-10', 'P-11', 'P-12'], 21000],
                     [['P-13'], 24000],
                     [['P-14', 'P-15'], 16500],
                     'default' => 20000,
@@ -63,7 +63,7 @@ class HouseUnitSeeder extends Seeder
             '4th_Flr' => [
                 'houses' => ['P-22', 'P-23', 'P-24', 'P-25', 'P-26', 'P-27'],
                 'rent_prices' => [
-                    [['P-22','P-23'], 21000],
+                    [['P-22', 'P-23'], 21000],
                     [['P-25'], 23000],
                     [['P-26', 'P-27'], 16000],
                     'default' => 20000,

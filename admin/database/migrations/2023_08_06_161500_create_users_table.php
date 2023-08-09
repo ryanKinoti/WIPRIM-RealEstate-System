@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -23,15 +24,16 @@ return new class extends Migration {
             $table->string('id_number');
             $table->string('address');
             $table->string('password');
-            $table->enum('payment_method',['MPESA Paybill','Bank Payment','Cash']);
+            $table->enum('payment_method', ['MPESA Pay-bill', 'Bank Payment', 'Cash']);
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('account_status', ['activated', 'inactive', 'blocked'])->default('inactive');
-            $table->string('google_id')->nullable();
-            $table->string('google_token')->nullable();
-            $table->string('profile_picture')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            //relationships
+            $table->foreign('house_unit_id')->references('id')->on('house_units');
         });
+        DB::statement("ALTER SEQUENCE users_id_seq RESTART WITH 101;");
     }
 
     /**

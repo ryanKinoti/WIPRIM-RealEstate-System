@@ -18,9 +18,18 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'role',
+        'house_unit_id',
+        'first_name',
+        'last_name',
+        'phone_number',
         'email',
+        'id_number',
+        'address',
         'password',
+        'payment_method',
+        'email_verified_at',
+        'account_status',
     ];
 
     /**
@@ -41,4 +50,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function houseUnit(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(HouseUnit::class, 'house_unit_id');
+    }
+
+    public function passwordResets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PasswordReset::class, 'user_id');
+    }
+
+    public function googleUser(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(GoogleUser::class, 'user_id');
+    }
+
+    public function occupancies(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(HouseUnitOccupancy::class, 'user_id');
+    }
+
+    public function payments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Payment::class, 'user_id');
+    }
 }

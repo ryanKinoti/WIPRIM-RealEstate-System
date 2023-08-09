@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -12,15 +13,15 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
+        Schema::create('house_unit_occupancies', function (Blueprint $table) {
+            $table->bigInteger('house_unit_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->enum('reset_type', ['account_creation', 'normal_reset'])->default('account_creation');
-            $table->enum('token_used', ['true', 'false'])->default('false');
-            $table->timestamp('created_at')->nullable();
+            $table->date('date_of_occupancy')->nullable();
+            $table->date('date_of_vacancy')->nullable();
+            $table->timestamps();
 
             //relationships
+            $table->foreign('house_unit_id')->references('id')->on('house_units');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -32,6 +33,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('house_unit_occupancies');
     }
 };
