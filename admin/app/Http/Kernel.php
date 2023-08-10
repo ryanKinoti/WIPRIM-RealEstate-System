@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\PreventBackAccess;
+use App\Http\Middleware\SessionTimeout;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -63,5 +65,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'disable_back' => PreventBackAccess::class,
+        'session_timeout' => SessionTimeout::class,
     ];
 }
